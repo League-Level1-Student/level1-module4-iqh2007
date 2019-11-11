@@ -88,8 +88,8 @@ public class Jeopardy implements ActionListener {
 		thirdButton = createButton("600");
 		fourthButton = createButton("800");
 
-		thirdButton.addActionListener(null);
-		fourthButton.addActionListener(null);
+		thirdButton.addActionListener(this);
+		fourthButton.addActionListener(this);
 
 		quizPanel.add(thirdButton);
 		quizPanel.add(fourthButton);
@@ -164,26 +164,44 @@ public class Jeopardy implements ActionListener {
 
 		// Remove this temporary message and replace it with a pop-up that asks the user
 		// the question
-		JOptionPane.showInputDialog("temporary message");
-
+		
+		String answer = JOptionPane.showInputDialog(question);
+		
 		// Stop the theme music when they have entered their response. Hint: use the
 		// sound variable
 		sound.stop();
+		
+		if(correctAnswer==answer) {
+			
+			// If the answer is correct increase the score by the prizeMoney\
+			score+=prizeMoney;
+			
+			// Pop up a message to tell the user they were correct
+			JOptionPane.showMessageDialog(null, "Correct");	
+		}
 
-		// If the answer is correct
-
-		// Increase the score by the prizeMoney
-
-		// Pop up a message to tell the user they were correct
+		
+		
 
 		// Otherwise
+		else {
+			
+			// Decrement the score by the prizeMoney
+			score-=prizeMoney;
+			
+			// Pop up a message to tell the user they were wrong and give them the correct
+			// answer
+			JOptionPane.showMessageDialog(null, "Incorrect");
+			
+			// Call the updateScore() method
+			updateScore();
+		}
+		
+		
+		
+		
 
-		// Decrement the score by the prizeMoney
-
-		// Pop up a message to tell the user they were wrong and give them the correct
-		// answer
-
-		// Call the updateScore() method
+		
 
 	}
 
