@@ -16,9 +16,7 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.JApplet;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 
 public class FortuneTeller extends JPanel implements Runnable, MouseListener {
 

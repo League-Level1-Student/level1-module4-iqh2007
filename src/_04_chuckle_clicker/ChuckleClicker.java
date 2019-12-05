@@ -8,8 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister.Pack;
-
 public class ChuckleClicker implements ActionListener {
 	public static void main(String[] args) {
 		new ChuckleClicker().makeButtons();
