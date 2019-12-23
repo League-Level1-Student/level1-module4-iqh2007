@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class SlotMachine implements ActionListener {
@@ -67,12 +68,20 @@ public class SlotMachine implements ActionListener {
 		// TODOAuto-generated method stub
 		if (e.getSource() == button) {
 
+			Icon a[] = { cherry, orange, lime };
 			Random random = new Random();
-			random.nextInt(9);
-			System.out.println(random);
-			
-			
+			int r = random.nextInt(3);
+			int c = random.nextInt(3);
+			int b = random.nextInt(3);
 
+			reel1.setIcon(a[r]);
+			reel2.setIcon(a[b]);
+			reel3.setIcon(a[c]);
+
+			if (r == b && r == c) {
+				JOptionPane.showMessageDialog(null, "You win");
+				System.exit(0);
+			}
 		}
 	}
 }
